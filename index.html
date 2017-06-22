@@ -73,6 +73,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/22/git-01/" class="article-date">
+  <time datetime="2017-06-22T02:14:35.000Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/git/">Git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/git-01/">Git配置文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git配置文件基本注释"><a href="#Git配置文件基本注释" class="headerlink" title="Git配置文件基本注释"></a>Git配置文件基本注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">[core]   //核心配置</div><div class="line">	repositoryformatversion = 0 //仓库格式版本</div><div class="line">	filemode = false  //文件模式  设置为false 可以忽略chmod修改的权限信息</div><div class="line">	bare = false //仅是仓库  否</div><div class="line">	logallrefupdates = true  //记录所有更新日志</div><div class="line">	symlinks = false  //符号链接</div><div class="line">	ignorecase = true //忽略检测</div><div class="line">	hideDotFiles = dotGitOnly //隐藏带点的文件  仅隐藏.git文件[夹]</div><div class="line">[remote &quot;origin&quot;]  //远程源配置</div><div class="line">	url = https://github.com/fsyd666/fsyd666.github.io.git  //远程源地址</div><div class="line">	fetch = +refs/heads/*:refs/remotes/origin/*  //所取回的更新配置  </div><div class="line">[branch &quot;master&quot;]  //master分支</div><div class="line">	remote = origin  //远程源 </div><div class="line">	merge = refs/heads/master  //合并到远程heads的/master  修改这个可使本地分支和远程分支不对应</div><div class="line">[gui]  //显示配置</div><div class="line">	wmstate = normal  //默认主题</div><div class="line">	geometry = 799x475+809+327 159 214  //不知道 字面意思&quot;几何结构&quot;</div><div class="line">[user] //用户</div><div class="line">	name = your-name // 当前库的所使用的名字.  配置全局的使用 git config --global user.name = &quot;your-name&quot;</div><div class="line">	email = your-email@vip.com  //当前库的所使用的Email. 配置全局的使用 git config --global user.email = &quot;your-email@vip.com&quot;</div><div class="line">[branch &quot;source&quot;]  //另一个分支</div><div class="line">	remote = origin //取远程源</div><div class="line">	merge = refs/heads/source //合并到远程的source分支</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/22/git-01/" data-id="cj47tes2s0003tgun655dumxl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux-iptables" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/21/linux-iptables/" class="article-date">
@@ -126,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/linux-iptables/" data-id="cj47smvny00043wun2xp7m43c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/linux-iptables/" data-id="cj47tes300007tgunr04fb2vq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/outher-mirror/" data-id="cj47smvo300073wunj5ssele6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/outher-mirror/" data-id="cj47tes36000btgunnlkc57e7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/ffmpeg/" data-id="cj47smvnw00033wunhdh1fmjf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/ffmpeg/" data-id="cj47tes2o0001tgunx2je159q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/favorites/" data-id="cj47smvo500093wunpi83d6il" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/favorites/" data-id="cj47tes2j0000tgunzc4gthas" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/git-bash/" data-id="cj47smvnn00003wunowu9vhrv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/git-bash/" data-id="cj47tes2u0004tgun38bsgs9o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,7 +567,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/other-md/" data-id="cj47smvo000053wun39oj3x9u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/other-md/" data-id="cj47tes330009tgun5ut4trpi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -572,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/hello-world/" data-id="cj47smvns00013wun504szvzh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/hello-world/" data-id="cj47tes2w0005tgungura8ic4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -619,6 +659,10 @@
       <ul>
         
           <li>
+            <a href="/2017/06/22/git-01/">Git配置文件</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/21/linux-iptables/">centOs6.4 iptables配置</a>
           </li>
         
@@ -632,10 +676,6 @@
         
           <li>
             <a href="/2017/06/21/favorites/">我的收藏夹</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/21/git-bash/">git常用命令</a>
           </li>
         
       </ul>
