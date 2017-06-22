@@ -177,4 +177,6 @@ git remote set-head origin master # 设置远程仓库的HEAD指向master分支
 git branch --set-upstream master origin/master
 
 git branch --set-upstream develop origin/develop
+
+git checkout -b dev origin/dev # 创建本地分支并跟踪远程分支
 ```
