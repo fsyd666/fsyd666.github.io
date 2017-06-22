@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ffmpeg基本使用方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="###ffmpeg基本命令使用： 分离视频音频流12ffmpeg -i input_file -vcodec copy -an output_file_video　　//分离视频流ffmpeg -i input_file -acodec copy -vn output_file_audio　　//分离音频流 视频解复用12ffmpeg –i test.mp4 –vcodec copy –an –f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ffmpeg基本使用方法">
+<meta property="og:url" content="http://yoursite.com/2017/06/21/ffmpeg/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="###ffmpeg基本命令使用： 分离视频音频流12ffmpeg -i input_file -vcodec copy -an output_file_video　　//分离视频流ffmpeg -i input_file -acodec copy -vn output_file_audio　　//分离音频流 视频解复用12ffmpeg –i test.mp4 –vcodec copy –an –f">
+<meta property="og:updated_time" content="2017-06-21T08:57:38.584Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ffmpeg基本使用方法">
+<meta name="twitter:description" content="###ffmpeg基本命令使用： 分离视频音频流12ffmpeg -i input_file -vcodec copy -an output_file_video　　//分离视频流ffmpeg -i input_file -acodec copy -vn output_file_audio　　//分离音频流 视频解复用12ffmpeg –i test.mp4 –vcodec copy –an –f">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/linux">Linux</a>
+        
+          <a class="main-nav-link" href="/php">PHP</a>
+        
+          <a class="main-nav-link" href="/python">Python</a>
+        
+          <a class="main-nav-link" href="/go">GO</a>
+        
+          <a class="main-nav-link" href="/flash">Flash</a>
+        
+          <a class="main-nav-link" href="/git">Git</a>
+        
+          <a class="main-nav-link" href="/bug">漏洞</a>
+        
+          <a class="main-nav-link" href="/cache">缓存</a>
+        
+          <a class="main-nav-link" href="/proxy">代理</a>
+        
+          <a class="main-nav-link" href="/other">其他</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ffmpeg" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/21/ffmpeg/" class="article-date">
+  <time datetime="2017-06-21T08:47:05.000Z" itemprop="datePublished">2017-06-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/other/">其他</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ffmpeg基本使用方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###ffmpeg基本命令使用：</p>
+<h4 id="分离视频音频流"><a href="#分离视频音频流" class="headerlink" title="分离视频音频流"></a>分离视频音频流</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i input_file -vcodec copy -an output_file_video　　//分离视频流</div><div class="line">ffmpeg -i input_file -acodec copy -vn output_file_audio　　//分离音频流</div></pre></td></tr></table></figure>
+<h4 id="视频解复用"><a href="#视频解复用" class="headerlink" title="视频解复用"></a>视频解复用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ffmpeg –i test.mp4 –vcodec copy –an –f m4v test.264</div><div class="line">ffmpeg –i test.avi –vcodec copy –an –f m4v test.264</div></pre></td></tr></table></figure>
+<h4 id="视频转码"><a href="#视频转码" class="headerlink" title="视频转码"></a>视频转码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ffmpeg –i test.mp4 –vcodec h264 –s 352*278 –an –f m4v test.264              //转码为码流原始文件</div><div class="line">ffmpeg –i test.mp4 –vcodec h264 –bf 0 –g 25 –s 352*278 –an –f m4v test.264  //转码为码流原始文件</div><div class="line">ffmpeg –i test.avi -vcodec mpeg4 –vtag xvid –qsame test_xvid.avi            //转码为封装文件</div><div class="line">//-bf B帧数目控制，-g 关键帧间隔控制，-s 分辨率控制</div></pre></td></tr></table></figure>
+<h4 id="视频封装"><a href="#视频封装" class="headerlink" title="视频封装"></a>视频封装</h4><p>ffmpeg –i video_file –i audio_file –vcodec copy –acodec copy output_file</p>
+<h4 id="视频剪切"><a href="#视频剪切" class="headerlink" title="视频剪切"></a>视频剪切</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ffmpeg –i test.avi –r 1 –f image2 image-%3d.jpeg        //提取图片</div><div class="line">ffmpeg -ss 0:1:30 -t 0:0:20 -i input.avi -vcodec copy -acodec copy output.avi    //剪切视频</div><div class="line">//-r 提取图像的频率，-ss 开始时间，-t 持续时间</div></pre></td></tr></table></figure>
+<h4 id="视频录制"><a href="#视频录制" class="headerlink" title="视频录制"></a>视频录制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg –i rtsp://192.168.3.205:5555/test –vcodec copy out.avi</div></pre></td></tr></table></figure>
+<h4 id="YUV序列播放"><a href="#YUV序列播放" class="headerlink" title="YUV序列播放"></a>YUV序列播放</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffplay -f rawvideo -video_size 1920x1080 input.yuv</div></pre></td></tr></table></figure>
+<h4 id="YUV序列转AVI"><a href="#YUV序列转AVI" class="headerlink" title="YUV序列转AVI"></a>YUV序列转AVI</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg –s w*h –pix_fmt yuv420p –i input.yuv –vcodec mpeg4 output.avi</div></pre></td></tr></table></figure>
+<h4 id="常用参数说明："><a href="#常用参数说明：" class="headerlink" title="常用参数说明："></a>常用参数说明：</h4><p><strong>主要参数：</strong><br>-i 设定输入流<br>-f 设定输出格式<br>-ss 开始时间<br><strong>视频参数：</strong><br>-b 设定视频流量，默认为200Kbit/s<br>-r 设定帧速率，默认为25<br>-s 设定画面的宽与高<br>-aspect 设定画面的比例<br>-vn 不处理视频<br>-vcodec 设定视频编解码器，未设定时则使用与输入流相同的编解码器<br><strong>音频参数:</strong><br>-ar 设定采样率<br>-ac 设定声音的Channel数<br>-acodec 设定声音编解码器，未设定时则使用与输入流相同的编解码器<br>-an 不处理音频</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/21/ffmpeg/" data-id="cj47sdxch00072wunzn3nfk1a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/21/outher-mirror/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          开源项目中国镜像
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/21/favorites/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我的收藏夹</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/other/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/21/linux-iptables/">centOs6.4 iptables配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/outher-mirror/">开源项目中国镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/ffmpeg/">ffmpeg基本使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/favorites/">我的收藏夹</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/git-bash/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/linux" class="mobile-nav-link">Linux</a>
+  
+    <a href="/php" class="mobile-nav-link">PHP</a>
+  
+    <a href="/python" class="mobile-nav-link">Python</a>
+  
+    <a href="/go" class="mobile-nav-link">GO</a>
+  
+    <a href="/flash" class="mobile-nav-link">Flash</a>
+  
+    <a href="/git" class="mobile-nav-link">Git</a>
+  
+    <a href="/bug" class="mobile-nav-link">漏洞</a>
+  
+    <a href="/cache" class="mobile-nav-link">缓存</a>
+  
+    <a href="/proxy" class="mobile-nav-link">代理</a>
+  
+    <a href="/other" class="mobile-nav-link">其他</a>
+  
+</nav>
+    
+
+<script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>centOs6.4 iptables配置 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CentOS6.4 配置iptables选择规则表，这个一定要先做，不然清空后可能会悲剧1iptables -P INPUT ACCEPT 清空默认所有规则1iptables -F 清空自定义的所有规则1iptables -X 计数器置01iptables -Z 如果没有此规则，你将不能通过127.0.0.1访问本地服务，例如ping 127.0.0.11iptables -A INPUT -i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centOs6.4 iptables配置">
+<meta property="og:url" content="http://yoursite.com/2017/06/21/linux-iptables/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CentOS6.4 配置iptables选择规则表，这个一定要先做，不然清空后可能会悲剧1iptables -P INPUT ACCEPT 清空默认所有规则1iptables -F 清空自定义的所有规则1iptables -X 计数器置01iptables -Z 如果没有此规则，你将不能通过127.0.0.1访问本地服务，例如ping 127.0.0.11iptables -A INPUT -i">
+<meta property="og:updated_time" content="2017-06-21T09:38:59.704Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="centOs6.4 iptables配置">
+<meta name="twitter:description" content="CentOS6.4 配置iptables选择规则表，这个一定要先做，不然清空后可能会悲剧1iptables -P INPUT ACCEPT 清空默认所有规则1iptables -F 清空自定义的所有规则1iptables -X 计数器置01iptables -Z 如果没有此规则，你将不能通过127.0.0.1访问本地服务，例如ping 127.0.0.11iptables -A INPUT -i">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/linux">Linux</a>
+        
+          <a class="main-nav-link" href="/php">PHP</a>
+        
+          <a class="main-nav-link" href="/python">Python</a>
+        
+          <a class="main-nav-link" href="/go">GO</a>
+        
+          <a class="main-nav-link" href="/flash">Flash</a>
+        
+          <a class="main-nav-link" href="/git">Git</a>
+        
+          <a class="main-nav-link" href="/bug">漏洞</a>
+        
+          <a class="main-nav-link" href="/cache">缓存</a>
+        
+          <a class="main-nav-link" href="/proxy">代理</a>
+        
+          <a class="main-nav-link" href="/other">其他</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux-iptables" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/21/linux-iptables/" class="article-date">
+  <time datetime="2017-06-21T09:31:42.000Z" itemprop="datePublished">2017-06-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      centOs6.4 iptables配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CentOS6-4-配置iptables"><a href="#CentOS6-4-配置iptables" class="headerlink" title="CentOS6.4 配置iptables"></a>CentOS6.4 配置iptables</h2><h4 id="选择规则表，这个一定要先做，不然清空后可能会悲剧"><a href="#选择规则表，这个一定要先做，不然清空后可能会悲剧" class="headerlink" title="选择规则表，这个一定要先做，不然清空后可能会悲剧"></a>选择规则表，这个一定要先做，不然清空后可能会悲剧</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -P INPUT ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="清空默认所有规则"><a href="#清空默认所有规则" class="headerlink" title="清空默认所有规则"></a>清空默认所有规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -F</div></pre></td></tr></table></figure>
+<h4 id="清空自定义的所有规则"><a href="#清空自定义的所有规则" class="headerlink" title="清空自定义的所有规则"></a>清空自定义的所有规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -X</div></pre></td></tr></table></figure>
+<h4 id="计数器置0"><a href="#计数器置0" class="headerlink" title="计数器置0"></a>计数器置0</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -Z</div></pre></td></tr></table></figure>
+<h4 id="如果没有此规则，你将不能通过127-0-0-1访问本地服务，例如ping-127-0-0-1"><a href="#如果没有此规则，你将不能通过127-0-0-1访问本地服务，例如ping-127-0-0-1" class="headerlink" title="如果没有此规则，你将不能通过127.0.0.1访问本地服务，例如ping 127.0.0.1"></a>如果没有此规则，你将不能通过127.0.0.1访问本地服务，例如ping 127.0.0.1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -i lo -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="开启ssh端口22"><a href="#开启ssh端口22" class="headerlink" title="开启ssh端口22"></a>开启ssh端口22</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="开启FTP端口21"><a href="#开启FTP端口21" class="headerlink" title="开启FTP端口21"></a>开启FTP端口21</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 21 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="开启web服务端口80"><a href="#开启web服务端口80" class="headerlink" title="开启web服务端口80"></a>开启web服务端口80</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 8080 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport xxxx -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="允许icmp包通过-也就是允许ping"><a href="#允许icmp包通过-也就是允许ping" class="headerlink" title="允许icmp包通过,也就是允许ping"></a>允许icmp包通过,也就是允许ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="允许所有对外请求的返回包-本机对外请求相当于OUTPUT-对于返回数据包必须接收啊，这相当于INPUT了"><a href="#允许所有对外请求的返回包-本机对外请求相当于OUTPUT-对于返回数据包必须接收啊，这相当于INPUT了" class="headerlink" title="允许所有对外请求的返回包 ,本机对外请求相当于OUTPUT,对于返回数据包必须接收啊，这相当于INPUT了"></a>允许所有对外请求的返回包 ,本机对外请求相当于OUTPUT,对于返回数据包必须接收啊，这相当于INPUT了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="如果要添加内网ip信任（接受其所有TCP请求）"><a href="#如果要添加内网ip信任（接受其所有TCP请求）" class="headerlink" title="如果要添加内网ip信任（接受其所有TCP请求）"></a>如果要添加内网ip信任（接受其所有TCP请求）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp -s 45.96.174.68 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="每秒中最多允许5个新连接"><a href="#每秒中最多允许5个新连接" class="headerlink" title="每秒中最多允许5个新连接"></a>每秒中最多允许5个新连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A FORWARD -p tcp --syn -m limit --limit 1/s --limit-burst 5 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="每秒中最多允许5个新连接-1"><a href="#每秒中最多允许5个新连接-1" class="headerlink" title="每秒中最多允许5个新连接"></a>每秒中最多允许5个新连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="开放多个端口"><a href="#开放多个端口" class="headerlink" title="开放多个端口"></a>开放多个端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 8888:8899 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="Ping洪水攻击"><a href="#Ping洪水攻击" class="headerlink" title="Ping洪水攻击"></a>Ping洪水攻击</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A FORWARD -p icmp --icmp-type echo-request -m limit --limit 1/s -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="封单个IP的命令是："><a href="#封单个IP的命令是：" class="headerlink" title="封单个IP的命令是："></a>封单个IP的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 222.34.135.106 -j DROP</div></pre></td></tr></table></figure>
+<h4 id="封IP段的命令是："><a href="#封IP段的命令是：" class="headerlink" title="封IP段的命令是："></a>封IP段的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 211.1.0.0/16 -j DROP</div><div class="line">iptables -I INPUT -s 211.2.0.0/16 -j DROP</div><div class="line">iptables -I INPUT -s 211.3.0.0/16 -j DROP</div></pre></td></tr></table></figure>
+<h4 id="封整个段的命令是："><a href="#封整个段的命令是：" class="headerlink" title="封整个段的命令是："></a>封整个段的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 211.0.0.0/8 -j DROP</div></pre></td></tr></table></figure>
+<h4 id="封几个段的命令是："><a href="#封几个段的命令是：" class="headerlink" title="封几个段的命令是："></a>封几个段的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 61.37.80.0/24 -j DROP</div><div class="line">iptables -I INPUT -s 61.37.81.0/24 -j DROP</div></pre></td></tr></table></figure>
+<h4 id="过滤所有非以上规则的请求"><a href="#过滤所有非以上规则的请求" class="headerlink" title="过滤所有非以上规则的请求"></a>过滤所有非以上规则的请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -P INPUT DROP</div></pre></td></tr></table></figure>
+<h4 id="保存重启"><a href="#保存重启" class="headerlink" title="保存重启"></a>保存重启</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service iptables save</div><div class="line">service iptables restart</div></pre></td></tr></table></figure>
+<h4 id="删除规则用-D参数"><a href="#删除规则用-D参数" class="headerlink" title="删除规则用-D参数"></a>删除规则用-D参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -D INPUT -p tcp -m tcp --dport 8080 -j ACCEPT</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/21/linux-iptables/" data-id="cj47sdxd6000a2wunxhfy5mr2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/21/outher-mirror/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">开源项目中国镜像</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/other/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/21/linux-iptables/">centOs6.4 iptables配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/outher-mirror/">开源项目中国镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/ffmpeg/">ffmpeg基本使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/favorites/">我的收藏夹</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/git-bash/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/linux" class="mobile-nav-link">Linux</a>
+  
+    <a href="/php" class="mobile-nav-link">PHP</a>
+  
+    <a href="/python" class="mobile-nav-link">Python</a>
+  
+    <a href="/go" class="mobile-nav-link">GO</a>
+  
+    <a href="/flash" class="mobile-nav-link">Flash</a>
+  
+    <a href="/git" class="mobile-nav-link">Git</a>
+  
+    <a href="/bug" class="mobile-nav-link">漏洞</a>
+  
+    <a href="/cache" class="mobile-nav-link">缓存</a>
+  
+    <a href="/proxy" class="mobile-nav-link">代理</a>
+  
+    <a href="/other" class="mobile-nav-link">其他</a>
+  
+</nav>
+    
+
+<script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
