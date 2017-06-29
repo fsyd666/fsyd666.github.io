@@ -31,7 +31,7 @@ categories: 其他
 + [centos镜像](http://isoredirect.centos.org/centos/6/isos/x86_64/)
 + [ROOT权限执行系统命令](http://blog.csdn.net/shamoqiuyin/article/details/7773865)
 + [CentOS修改yum源](http://mirrors.163.com/.help/centos.html)
-
++ [Nginx中文手册](http://www.nginx.cn/doc/)
 ----------------------------------
 #### Web
 + [正则表达式的与或非](http://www.cnblogs.com/bvbook/archive/2010/11/03/1867775.html)
