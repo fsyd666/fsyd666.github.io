@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>nginx 配置 | 鱼香肉丝不好吃的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="301重定向域名123if($host!=&amp;apos;www.xxxx.com&amp;apos;)&amp;#123;   #host变量表示主机名    rewrite ^/(.*)$ http://www.xxxx.net/$1 permanent;  #permanent表示永久重定向&amp;#125; 普通地址重定向把 http://example.com/test.php?para=xxx 重定向到 htt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx 配置">
+<meta property="og:url" content="http://yoursite.com/2017/06/30/nginx-01/index.html">
+<meta property="og:site_name" content="鱼香肉丝不好吃的博客">
+<meta property="og:description" content="301重定向域名123if($host!=&amp;apos;www.xxxx.com&amp;apos;)&amp;#123;   #host变量表示主机名    rewrite ^/(.*)$ http://www.xxxx.net/$1 permanent;  #permanent表示永久重定向&amp;#125; 普通地址重定向把 http://example.com/test.php?para=xxx 重定向到 htt">
+<meta property="og:updated_time" content="2017-06-30T07:32:07.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nginx 配置">
+<meta name="twitter:description" content="301重定向域名123if($host!=&amp;apos;www.xxxx.com&amp;apos;)&amp;#123;   #host变量表示主机名    rewrite ^/(.*)$ http://www.xxxx.net/$1 permanent;  #permanent表示永久重定向&amp;#125; 普通地址重定向把 http://example.com/test.php?para=xxx 重定向到 htt">
+  
+    <link rel="alternate" href="/atom.xml" title="鱼香肉丝不好吃的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/linux">Linux</a>
+        
+          <a class="main-nav-link" href="/php">PHP</a>
+        
+          <a class="main-nav-link" href="/python">Python</a>
+        
+          <a class="main-nav-link" href="/go">GO</a>
+        
+          <a class="main-nav-link" href="/flash">Flash</a>
+        
+          <a class="main-nav-link" href="/git">Git</a>
+        
+          <a class="main-nav-link" href="/bug">漏洞</a>
+        
+          <a class="main-nav-link" href="/cache">缓存</a>
+        
+          <a class="main-nav-link" href="/proxy">代理</a>
+        
+          <a class="main-nav-link" href="/other">其他</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-nginx-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/nginx-01/" class="article-date">
+  <time datetime="2017-06-30T06:38:02.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nginx 配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="301重定向域名"><a href="#301重定向域名" class="headerlink" title="301重定向域名"></a>301重定向域名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if($host!=&apos;www.xxxx.com&apos;)&#123;   #host变量表示主机名</div><div class="line">    rewrite ^/(.*)$ http://www.xxxx.net/$1 permanent;  #permanent表示永久重定向</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="普通地址重定向"><a href="#普通地址重定向" class="headerlink" title="普通地址重定向"></a>普通地址重定向</h4><p><code>把 http://example.com/test.php?para=xxx 重定向到 http://example.com/new</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rewrite ^/test.php(.*) /new? permanent; #重定向后不带参数</div></pre></td></tr></table></figure></p>
+<p><code>把 http://example.com/test.php?para=xxx 重定向到 http://example.com/new?para=xxx</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rewrite ^/test.php(.*) /new permanent;  #重定向后带参数</div></pre></td></tr></table></figure></p>
+<p><code>把 http://example.com/test.php?para=xxx 重定向到 http://example.com/new</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rewrite  ^/test.php/new?id=$arg_id?  permanent;    #重定向后带指定的参数</div></pre></td></tr></table></figure></p>
+<h4 id="去除index-php"><a href="#去除index-php" class="headerlink" title="去除index.php"></a>去除index.php</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#方法1</div><div class="line">location / &#123;</div><div class="line">    if (!-e $request_filename)&#123;</div><div class="line">        rewrite ^/(.*)$ /index.PHP/$1 last;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">#方法2</div><div class="line">location / &#123;</div><div class="line">    try_files $uri $uri/ /index.php$is_args$args;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="一个虚拟主机的配置"><a href="#一个虚拟主机的配置" class="headerlink" title="一个虚拟主机的配置"></a>一个虚拟主机的配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">server</div><div class="line">    &#123;</div><div class="line">        listen 80;</div><div class="line">        server_name www.xx.com xx.com;</div><div class="line">        index index.php;</div><div class="line">        root  /www/xx;</div><div class="line"></div><div class="line">        #error_page   404   /404.html;</div><div class="line">        #禁止访问指定的目录下的PHP文件</div><div class="line">        location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ &#123; deny all; &#125;  </div><div class="line"></div><div class="line">	#重定向</div><div class="line">	if ($host != &apos;www.xx.com&apos;) &#123;</div><div class="line">		rewrite ^/(.*)$ http://www.xx.com$1 permanent;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	location / &#123;</div><div class="line">		# Redirect everything that isn&apos;t a real file to index.php</div><div class="line">		try_files $uri $uri/ /index.php$is_args$args;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$</div><div class="line">        &#123;</div><div class="line">            expires      30d;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        location ~ .*\.(js|css)?$</div><div class="line">        &#123;</div><div class="line">            expires      12h;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        location ~ /.well-known &#123;</div><div class="line">            allow all;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        location ~ /\.</div><div class="line">        &#123;</div><div class="line">            deny all;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        access_log off;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/30/nginx-01/" data-id="cj4jjkkrf0003n0unkm51p3f2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/24/apache-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">apache2.4以上版本vhost 403问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/other/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/30/nginx-01/">nginx 配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/24/apache-01/">apache2.4以上版本vhost 403问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/23/outher-02/">cmd命令乱码</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/22/linux-file/">Linux脚本及配置文件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/22/git-01/">Git配置文件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 fsyd<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/linux" class="mobile-nav-link">Linux</a>
+  
+    <a href="/php" class="mobile-nav-link">PHP</a>
+  
+    <a href="/python" class="mobile-nav-link">Python</a>
+  
+    <a href="/go" class="mobile-nav-link">GO</a>
+  
+    <a href="/flash" class="mobile-nav-link">Flash</a>
+  
+    <a href="/git" class="mobile-nav-link">Git</a>
+  
+    <a href="/bug" class="mobile-nav-link">漏洞</a>
+  
+    <a href="/cache" class="mobile-nav-link">缓存</a>
+  
+    <a href="/proxy" class="mobile-nav-link">代理</a>
+  
+    <a href="/other" class="mobile-nav-link">其他</a>
+  
+</nav>
+    
+
+<script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
