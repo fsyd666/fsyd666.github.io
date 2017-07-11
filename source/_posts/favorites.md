@@ -96,8 +96,8 @@ categories: 其他
 + [百度云下载插件](https://github.com/cloudroc/baidu-nolimit)
 + [hexo官方文档](https://hexo.io/zh-cn/docs/)
 #### 特殊搜索引擎
-+ [特征码搜索引擎](https://www.zoomeye.org/)
++ [zoomeye-特征码搜索引擎](https://www.zoomeye.org/)
 + [Ebookee 免费电子书搜索引擎](https://ebookee.org/)
 + [网络时光机--历史快照的搜索引擎](https://web.archive.org)
 + [shodan-服务器指纹](https://www.shodan.io)
-+ [你注册过哪些网站](https://www.reg007.com/)
++ [reg007-你注册过哪些网站](https://www.reg007.com/)
