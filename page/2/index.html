@@ -73,6 +73,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/21/hexo/" class="article-date">
+  <time datetime="2017-06-21T07:22:57.000Z" itemprop="datePublished">2017-06-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/other/">其他</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/21/hexo/">Hexo 安装使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>先安装nodejs</li>
+<li>安装hexo<br><code>npm install -g hexo</code></li>
+<li>初始化然后，执行init命令初始化hexo<br>init 会使用 git 所以要把git加入到环境变量<br><code>hexo init</code><br><strong>安装完成</strong></li>
+</ol>
+<hr>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><ul>
+<li>生成静态页面<br><code>hexo generate（hexo g也可以）</code></li>
+<li>启动本地服务，进行文章预览调试<br><code>hexo server</code></li>
+<li>生成新文件<br><code>hexo n 文件名</code></li>
+<li>更新hexo到最新版<br><code>npm update hexo -g</code></li>
+</ul>
+<hr>
+<h4 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h4><ol>
+<li>建立Repository  <em>fsyd666.github.io 必须这种格式 才能使用域名访问</em></li>
+<li><p>修改 _config.yml 配置文件 的deploy如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    type: git</div><div class="line">    repo: https://github.com/fsyd666/fsyd666.github.io.git</div><div class="line">    branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git</div></pre></td></tr></table></figure>
+</li>
+<li><p>部署:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="每次部署步骤："><a href="#每次部署步骤：" class="headerlink" title="每次部署步骤："></a>每次部署步骤：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g -d</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/21/hexo/" data-id="cj4jjkkru000cn0unnknxpdi6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git-bash" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/21/git-bash/" class="article-date">
@@ -256,7 +321,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
     </div>
   </div>
 
@@ -267,6 +332,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/02/outher-03/">风扇减速方法</a>
+          </li>
         
           <li>
             <a href="/2017/06/30/nginx-01/">nginx 配置</a>
@@ -282,10 +351,6 @@
         
           <li>
             <a href="/2017/06/22/linux-file/">Linux脚本及配置文件</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/22/git-01/">Git配置文件</a>
           </li>
         
       </ul>
