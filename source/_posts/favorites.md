@@ -42,6 +42,7 @@ categories: 其他
 + [JS最全API网站](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/abort)
 + [JS压缩](http://tool.css-js.com/)
 + [Jquery滚动条](http://manos.malihu.gr/jquery-custom-content-scroller/)
++ [fontawesome 3.2.1版本图片](http://fontawesome.io/3.2.1/icons/)
 
 #### Python
 + [python在线手册](http://docs.pythontab.com/)
