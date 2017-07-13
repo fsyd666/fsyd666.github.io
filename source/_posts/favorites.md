@@ -81,6 +81,7 @@ categories: 其他
 + [PHP 扩展库](http://pecl.php.net/package-stats.php)
 + [深入理解Yii2.0](http://www.digpage.com/)
 + [Windows monodb 扩展](https://s3.amazonaws.com/drivers.mongodb.org/php/index.html)
++ [Xdebug自动识别安装](https://xdebug.org/wizard.php)
 --------------------------------
 
 #### 其他
