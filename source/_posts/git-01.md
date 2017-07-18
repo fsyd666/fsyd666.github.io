@@ -5,6 +5,12 @@ tags:
 categories: Git
 ---
 
+#### GitGui设置中文
+`
+复制zh_cn.msg文件到安装目录下：C:\Program Files\Git\mingw64\share\git-gui\lib\msgs 没有就建立对应目录
+`
+[zh_cn.msg文件下载](/data/git/zh_cn.msg)
+
 #### Git配置文件基本注释
 ```
 [core]   //核心配置
