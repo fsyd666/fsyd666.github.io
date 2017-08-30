@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Git配置文件 | 鱼香肉丝不好吃的博客</title>
+  <title>linux-mysql | 鱼香肉丝不好吃的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GitGui设置中文复制zh_cn.msg文件到安装目录下：C:\Program Files\Git\mingw64\share\git-gui\lib\msgs 没有就建立对应目录zh_cn.msg文件下载 Git配置文件基本注释1234567891011121314151617181920212223[core]   //核心配置	repositoryformatversion = 0 //仓">
+  <meta name="description" content="修改mysql root密码1234service mysql stop/usr/local/mysql/bin/mysqld_safe --skip-grant-tables &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;mysql mysql -uroot;  (或者mysql -uroot;  use mysql; )UPDATE user SET Password=PASS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git配置文件">
-<meta property="og:url" content="http://yoursite.com/2017/06/22/git-01/index.html">
+<meta property="og:title" content="linux-mysql">
+<meta property="og:url" content="http://yoursite.com/2017/08/30/linux-mysql/index.html">
 <meta property="og:site_name" content="鱼香肉丝不好吃的博客">
-<meta property="og:description" content="GitGui设置中文复制zh_cn.msg文件到安装目录下：C:\Program Files\Git\mingw64\share\git-gui\lib\msgs 没有就建立对应目录zh_cn.msg文件下载 Git配置文件基本注释1234567891011121314151617181920212223[core]   //核心配置	repositoryformatversion = 0 //仓">
-<meta property="og:updated_time" content="2017-07-18T05:31:49.845Z">
+<meta property="og:description" content="修改mysql root密码1234service mysql stop/usr/local/mysql/bin/mysqld_safe --skip-grant-tables &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;mysql mysql -uroot;  (或者mysql -uroot;  use mysql; )UPDATE user SET Password=PASS">
+<meta property="og:updated_time" content="2017-08-30T04:27:53.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git配置文件">
-<meta name="twitter:description" content="GitGui设置中文复制zh_cn.msg文件到安装目录下：C:\Program Files\Git\mingw64\share\git-gui\lib\msgs 没有就建立对应目录zh_cn.msg文件下载 Git配置文件基本注释1234567891011121314151617181920212223[core]   //核心配置	repositoryformatversion = 0 //仓">
+<meta name="twitter:title" content="linux-mysql">
+<meta name="twitter:description" content="修改mysql root密码1234service mysql stop/usr/local/mysql/bin/mysqld_safe --skip-grant-tables &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;mysql mysql -uroot;  (或者mysql -uroot;  use mysql; )UPDATE user SET Password=PASS">
   
     <link rel="alternate" href="/atom.xml" title="鱼香肉丝不好吃的博客" type="application/atom+xml">
   
@@ -75,14 +75,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-git-01" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-linux-mysql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/22/git-01/" class="article-date">
-  <time datetime="2017-06-22T02:14:35.000Z" itemprop="datePublished">2017-06-22</time>
+    <a href="/2017/08/30/linux-mysql/" class="article-date">
+  <time datetime="2017-08-30T04:03:16.000Z" itemprop="datePublished">2017-08-30</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/git/">Git</a>
+    <a class="article-category-link" href="/linux/">Linux</a>
   </div>
 
   </div>
@@ -93,7 +93,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Git配置文件
+      linux-mysql
     </h1>
   
 
@@ -101,12 +101,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="GitGui设置中文"><a href="#GitGui设置中文" class="headerlink" title="GitGui设置中文"></a>GitGui设置中文</h4><p><code>复制zh_cn.msg文件到安装目录下：C:\Program Files\Git\mingw64\share\git-gui\lib\msgs 没有就建立对应目录</code><br><a href="/data/git/zh_cn.msg">zh_cn.msg文件下载</a></p>
-<h4 id="Git配置文件基本注释"><a href="#Git配置文件基本注释" class="headerlink" title="Git配置文件基本注释"></a>Git配置文件基本注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">[core]   //核心配置</div><div class="line">	repositoryformatversion = 0 //仓库格式版本</div><div class="line">	filemode = false  //文件模式  设置为false 可以忽略chmod修改的权限信息</div><div class="line">	bare = false //仅是仓库  否</div><div class="line">	logallrefupdates = true  //记录所有更新日志</div><div class="line">	symlinks = false  //符号链接</div><div class="line">	ignorecase = true //忽略检测</div><div class="line">	hideDotFiles = dotGitOnly //隐藏带点的文件  仅隐藏.git文件[夹]</div><div class="line">[remote &quot;origin&quot;]  //远程源配置</div><div class="line">	url = https://github.com/fsyd666/fsyd666.github.io.git  //远程源地址</div><div class="line">	fetch = +refs/heads/*:refs/remotes/origin/*  //所取回的更新配置  </div><div class="line">[branch &quot;master&quot;]  //master分支</div><div class="line">	remote = origin  //远程源 </div><div class="line">	merge = refs/heads/master  //合并到远程heads的/master  修改这个可使本地分支和远程分支不对应</div><div class="line">[gui]  //显示配置</div><div class="line">	wmstate = normal  //默认主题</div><div class="line">	geometry = 799x475+809+327 159 214  //不知道 字面意思&quot;几何结构&quot;</div><div class="line">[user] //用户</div><div class="line">	name = your-name // 当前库的所使用的名字.  配置全局的使用 git config --global user.name = &quot;your-name&quot;</div><div class="line">	email = your-email@vip.com  //当前库的所使用的Email. 配置全局的使用 git config --global user.email = &quot;your-email@vip.com&quot;</div><div class="line">[branch &quot;source&quot;]  //另一个分支</div><div class="line">	remote = origin //取远程源</div><div class="line">	merge = refs/heads/source //合并到远程的source分支</div></pre></td></tr></table></figure>
+        <h4 id="修改mysql-root密码"><a href="#修改mysql-root密码" class="headerlink" title="修改mysql root密码"></a>修改mysql root密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">service mysql stop</div><div class="line">/usr/local/mysql/bin/mysqld_safe --skip-grant-tables &gt;/dev/null 2&gt;&amp;1 &amp;</div><div class="line">mysql mysql -uroot;  (或者mysql -uroot;  use mysql; )</div><div class="line">UPDATE user SET Password=PASSWORD(&apos;123456&apos;) where USER=&apos;root&apos;;</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/22/git-01/" data-id="cj6yium1g000erwunbl7f7h0q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/30/linux-mysql/" data-id="cj6yium0o0001rwun3vq6xb7j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,19 +114,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/06/22/linux-file/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Linux脚本及配置文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/21/linux-iptables/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/07/02/outher-03/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">centOs6.4 iptables配置</div>
+      <div class="article-nav-title">风扇减速方法</div>
     </a>
   
 </nav>
