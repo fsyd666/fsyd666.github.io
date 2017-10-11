@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>汇编常用指令 | 鱼香肉丝不好吃的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="####通用寄存器123456789101112EAX:	 累加器EBX:	 基址寄存器ECX:	 计数器EDX:	 数据寄存器ESI:	 源变址寄存器EDI:	 目的变址寄存器EBP:	 扩展基址指针寄存器ESP:	 栈指针寄存器EIP:	 指令指针寄存器EBP:	 EBP在栈中运用最广，刚开始没有什么需要特别注意的ESP:	 ESP指向栈区域的栈顶位置。栈是一个存放即将会被用到的数据的地方，你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编常用指令">
+<meta property="og:url" content="http://yoursite.com/2017/09/07/huibian/index.html">
+<meta property="og:site_name" content="鱼香肉丝不好吃的博客">
+<meta property="og:description" content="####通用寄存器123456789101112EAX:	 累加器EBX:	 基址寄存器ECX:	 计数器EDX:	 数据寄存器ESI:	 源变址寄存器EDI:	 目的变址寄存器EBP:	 扩展基址指针寄存器ESP:	 栈指针寄存器EIP:	 指令指针寄存器EBP:	 EBP在栈中运用最广，刚开始没有什么需要特别注意的ESP:	 ESP指向栈区域的栈顶位置。栈是一个存放即将会被用到的数据的地方，你">
+<meta property="og:updated_time" content="2017-09-07T01:57:54.070Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="汇编常用指令">
+<meta name="twitter:description" content="####通用寄存器123456789101112EAX:	 累加器EBX:	 基址寄存器ECX:	 计数器EDX:	 数据寄存器ESI:	 源变址寄存器EDI:	 目的变址寄存器EBP:	 扩展基址指针寄存器ESP:	 栈指针寄存器EIP:	 指令指针寄存器EBP:	 EBP在栈中运用最广，刚开始没有什么需要特别注意的ESP:	 ESP指向栈区域的栈顶位置。栈是一个存放即将会被用到的数据的地方，你">
+  
+    <link rel="alternate" href="/atom.xml" title="鱼香肉丝不好吃的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/linux">Linux</a>
+        
+          <a class="main-nav-link" href="/php">PHP</a>
+        
+          <a class="main-nav-link" href="/python">Python</a>
+        
+          <a class="main-nav-link" href="/go">GO</a>
+        
+          <a class="main-nav-link" href="/flash">Flash</a>
+        
+          <a class="main-nav-link" href="/git">Git</a>
+        
+          <a class="main-nav-link" href="/bug">漏洞</a>
+        
+          <a class="main-nav-link" href="/cache">缓存</a>
+        
+          <a class="main-nav-link" href="/proxy">代理</a>
+        
+          <a class="main-nav-link" href="/other">其他</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-huibian" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/07/huibian/" class="article-date">
+  <time datetime="2017-09-07T01:51:13.000Z" itemprop="datePublished">2017-09-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/Outher/">Outher</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      汇编常用指令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####通用寄存器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">EAX:	 累加器</div><div class="line">EBX:	 基址寄存器</div><div class="line">ECX:	 计数器</div><div class="line">EDX:	 数据寄存器</div><div class="line">ESI:	 源变址寄存器</div><div class="line">EDI:	 目的变址寄存器</div><div class="line">EBP:	 扩展基址指针寄存器</div><div class="line">ESP:	 栈指针寄存器</div><div class="line">EIP:	 指令指针寄存器</div><div class="line">EBP:	 EBP在栈中运用最广，刚开始没有什么需要特别注意的</div><div class="line">ESP:	 ESP指向栈区域的栈顶位置。栈是一个存放即将会被用到的数据的地方，你可以去搜索一下push/pop 指令了解更多栈知识。</div><div class="line">EIP:	 EIP指向下一个将会被执行的指令。</div></pre></td></tr></table></figure></p>
+<p>####标志寄存器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ZF 零标志  若上一个运算结果为0，则其值为1，否则其值为0</div><div class="line">OF 溢出标志  当上一步操作改变了某寄存器的最高有效位时，OF寄存器会被设置成1</div><div class="line">CF 进位标志</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/07/huibian/" data-id="cj8mnndd6000x1oun68zs2j2j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/28/php-ext/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          php-ext
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/30/linux-mysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux-mysql</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/Outher/">Outher</a></li><li class="category-list-item"><a class="category-list-link" href="/php/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/other/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/28/php-ext/">php-ext</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/07/huibian/">汇编常用指令</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/30/linux-mysql/">linux-mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/outher-03/">风扇减速方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/nginx-01/">nginx 配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 fsyd<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/linux" class="mobile-nav-link">Linux</a>
+  
+    <a href="/php" class="mobile-nav-link">PHP</a>
+  
+    <a href="/python" class="mobile-nav-link">Python</a>
+  
+    <a href="/go" class="mobile-nav-link">GO</a>
+  
+    <a href="/flash" class="mobile-nav-link">Flash</a>
+  
+    <a href="/git" class="mobile-nav-link">Git</a>
+  
+    <a href="/bug" class="mobile-nav-link">漏洞</a>
+  
+    <a href="/cache" class="mobile-nav-link">缓存</a>
+  
+    <a href="/proxy" class="mobile-nav-link">代理</a>
+  
+    <a href="/other" class="mobile-nav-link">其他</a>
+  
+</nav>
+    
+
+<script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
