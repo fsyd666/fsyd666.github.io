@@ -1,5 +1,5 @@
 ---
-title: Git配置文件
+title: Git记录
 date: 2017-06-22 10:14:35
 tags:
 categories: Git
@@ -37,4 +37,19 @@ categories: Git
 	remote = origin //取远程源
 	merge = refs/heads/source //合并到远程的source分支
 
+```
+
+### Git忽略
+1. 没有被管控的文件
+```
+.gitignore文件添加
+```
+2. 已经推送（push）过的文件，想从git远程库中删除，并在以后的提交中忽略，但是却还想在本地保留这个文件
+```
+ git rm --cached Xml/config.xml    可使用通配符  Xml/*
+.gitignore文件添加
+```
+3. 已经推送（push）过的文件，想在以后的提交时忽略此文件，即使本地已经修改过，而且不删除git远程库中相应文件
+```
+git update-index --assume-unchanged Xml/config.xml 可使用通配符  Xml/*
 ```
