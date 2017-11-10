@@ -73,6 +73,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-merlin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/10/merlin/" class="article-date">
+  <time datetime="2017-11-10T09:55:30.000Z" itemprop="datePublished">2017-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/Other/">Other</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/10/merlin/">梅林交叉编译环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Asuswrt-Merlin(ARM)交叉编译环境的搭建</p>
+<p>这里说到的AC-68U就是ARM平台的，Soc是BCM4708;我们的电脑如无意外都是X86平台，直接编译的程序并不能在路由执行。</p>
+<p>注:华硕的AC-66U 、 N-66U为MIPS架构的Soc(BCM4706)，此教程不完全适用。</p>
+<p>首先是下载Merlin的源码,此处以保存在/home/merlin<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /home/merlin</div><div class="line">git clone https://github.com/RMerl/asuswrt-merlin.git</div></pre></td></tr></table></figure></p>
+<p>下载完这个巨大的包之后，进入/home/merlin/asuswrt-merlin/release，你会看到很多文件夹，这里说一下各个文件夹中工具对应的路由型号和架构。<br>(也可以不下载完整包只下载编译包 地址：<a href="https://github.com/RMerl/am-toolchains" target="_blank" rel="external">https://github.com/RMerl/am-toolchains</a>)<br>src-rt/是对应古老的N-16U，此处不讨论<br>src-rt-6.x/对应MIPS架构的AC-66U和N-66U<br>src-rt-6.x.4708/对应采用BCM4708的AC-68U以及AC56U，Soc为ARM架构</p>
+<p>然后是创建软连接，方便管理和调用</p>
+<p>#此处酌情调整路径，如果是AC-66U则把src-rt-6.x.4708换成src-rt-6.x<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln -s /home/merlin/asuswrt-merlin/tools/brcm /opt/brcm</div><div class="line">ln -s /home/merlin/asuswrt-merlin/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3 /opt/brcm-arm</div></pre></td></tr></table></figure></p>
+<p>接下来是安装编译需要的组件，如果电脑装有这些软件的可以跳过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install autoconf automake bash bison bzip2 diffutils file flex g++ gawk gcc-multilib gettext gperf groff-base libncurses-dev libexpat1-dev libslang2 libssl-dev libtool libxml-parser-perl make patch perl pkg-config python sed shtool tar texinfo unzip zlib1g zlib1g-dev</div></pre></td></tr></table></figure></p>
+<p>如果你的电脑是64位操作系统，会缺少一些32位的库，这里需要自行安装。另外这些软件包的名称可能会在版本迭代中有所变动，如果装不上请自行搜索。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install lib32z1-dev lib32stdc++6</div></pre></td></tr></table></figure></p>
+<p>这样子环境的部署就大功告成了。<br>在每次开启一个终端要编译的时候，需要输入变量环境。记得，是每次创建一个新的终端都要输入。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin:/opt/brcm-arm/bin</div><div class="line">export LD_LIBRARY_PATH=$&#123;LD_LIBRARY_PATH&#125;:/opt/brcm-arm/lib:/opt/brcm/hndtools-mipsel-uclibc/lib:/usr/local/lib:/usr/lib</div></pre></td></tr></table></figure></p>
+<p>这样子就可以去编译你需要的软件了，不过在configure之前记得加上这一段，举个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CC=arm-uclibc-linux-2.6.36-gcc CXX=arm-uclibc-linux-2.6.36-g++ AR=arm-uclibc-linux-2.6.36-ar RANLIB=arm-uclibc-linux-2.6.36-ranlib ./configure</div></pre></td></tr></table></figure></p>
+<p>有时候要用到 host= 这个编译参数，这里填</p>
+<p>–host=arm-uclibc-linux</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/10/merlin/" data-id="cj9tqfk7d0008xounbp71md9v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-php-ext" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/28/php-ext/" class="article-date">
@@ -104,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/28/php-ext/" data-id="cj8mo45o4000q0cunp3qbn64v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/28/php-ext/" data-id="cj9tqfk7u000oxounmq11hik9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/07/huibian/" data-id="cj8mo45nn00090cund708h9sd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/07/huibian/" data-id="cj9tqfk8h0011xounu0337jo0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/30/linux-mysql/" data-id="cj8mo45nt000g0cunobi3yqbm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/30/linux-mysql/" data-id="cj9tqfk7f000bxoun1u91otn6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -237,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/02/outher-03/" data-id="cj8mo45o1000o0cun6rd6mnnm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/02/outher-03/" data-id="cj9tqfk8g0010xounb2mjqa7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/nginx-01/" data-id="cj8mo45nv000i0cunmqxfyenc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/nginx-01/" data-id="cj9tqfk8p0015xoun2knx3to3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/24/apache-01/" data-id="cj8mo45n200000cunf85epgjd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/24/apache-01/" data-id="cj9tqfk6j0001xounk5p917r8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/23/outher-02/" data-id="cj8mo45nz000l0cunkeze54hd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/23/outher-02/" data-id="cj9tqfk7n000hxounsmxb7clj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -417,7 +470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/22/linux-file/" data-id="cj8mo45nr000c0cun51zt4v4n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/22/linux-file/" data-id="cj9tqfk7h000cxoun89esnppe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -469,70 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/22/git-01/" data-id="cj8mo45ni00050cunoudcnini" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux-iptables" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/21/linux-iptables/" class="article-date">
-  <time datetime="2017-06-21T09:31:42.000Z" itemprop="datePublished">2017-06-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/21/linux-iptables/">centOs6.4 iptables配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="CentOS6-4-配置iptables"><a href="#CentOS6-4-配置iptables" class="headerlink" title="CentOS6.4 配置iptables"></a>CentOS6.4 配置iptables</h2><h4 id="选择规则表，这个一定要先做，不然清空后可能会悲剧"><a href="#选择规则表，这个一定要先做，不然清空后可能会悲剧" class="headerlink" title="选择规则表，这个一定要先做，不然清空后可能会悲剧"></a>选择规则表，这个一定要先做，不然清空后可能会悲剧</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -P INPUT ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="清空默认所有规则"><a href="#清空默认所有规则" class="headerlink" title="清空默认所有规则"></a>清空默认所有规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -F</div></pre></td></tr></table></figure>
-<h4 id="清空自定义的所有规则"><a href="#清空自定义的所有规则" class="headerlink" title="清空自定义的所有规则"></a>清空自定义的所有规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -X</div></pre></td></tr></table></figure>
-<h4 id="计数器置0"><a href="#计数器置0" class="headerlink" title="计数器置0"></a>计数器置0</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -Z</div></pre></td></tr></table></figure>
-<h4 id="如果没有此规则，你将不能通过127-0-0-1访问本地服务，例如ping-127-0-0-1"><a href="#如果没有此规则，你将不能通过127-0-0-1访问本地服务，例如ping-127-0-0-1" class="headerlink" title="如果没有此规则，你将不能通过127.0.0.1访问本地服务，例如ping 127.0.0.1"></a>如果没有此规则，你将不能通过127.0.0.1访问本地服务，例如ping 127.0.0.1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -i lo -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="开启ssh端口22"><a href="#开启ssh端口22" class="headerlink" title="开启ssh端口22"></a>开启ssh端口22</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="开启FTP端口21"><a href="#开启FTP端口21" class="headerlink" title="开启FTP端口21"></a>开启FTP端口21</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 21 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="开启web服务端口80"><a href="#开启web服务端口80" class="headerlink" title="开启web服务端口80"></a>开启web服务端口80</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 8080 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport xxxx -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="允许icmp包通过-也就是允许ping"><a href="#允许icmp包通过-也就是允许ping" class="headerlink" title="允许icmp包通过,也就是允许ping"></a>允许icmp包通过,也就是允许ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="允许所有对外请求的返回包-本机对外请求相当于OUTPUT-对于返回数据包必须接收啊，这相当于INPUT了"><a href="#允许所有对外请求的返回包-本机对外请求相当于OUTPUT-对于返回数据包必须接收啊，这相当于INPUT了" class="headerlink" title="允许所有对外请求的返回包 ,本机对外请求相当于OUTPUT,对于返回数据包必须接收啊，这相当于INPUT了"></a>允许所有对外请求的返回包 ,本机对外请求相当于OUTPUT,对于返回数据包必须接收啊，这相当于INPUT了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="如果要添加内网ip信任（接受其所有TCP请求）"><a href="#如果要添加内网ip信任（接受其所有TCP请求）" class="headerlink" title="如果要添加内网ip信任（接受其所有TCP请求）"></a>如果要添加内网ip信任（接受其所有TCP请求）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp -s 45.96.174.68 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="每秒中最多允许5个新连接"><a href="#每秒中最多允许5个新连接" class="headerlink" title="每秒中最多允许5个新连接"></a>每秒中最多允许5个新连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A FORWARD -p tcp --syn -m limit --limit 1/s --limit-burst 5 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="每秒中最多允许5个新连接-1"><a href="#每秒中最多允许5个新连接-1" class="headerlink" title="每秒中最多允许5个新连接"></a>每秒中最多允许5个新连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="开放多个端口"><a href="#开放多个端口" class="headerlink" title="开放多个端口"></a>开放多个端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A INPUT -p tcp --dport 8888:8899 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="Ping洪水攻击"><a href="#Ping洪水攻击" class="headerlink" title="Ping洪水攻击"></a>Ping洪水攻击</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -A FORWARD -p icmp --icmp-type echo-request -m limit --limit 1/s -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="封单个IP的命令是："><a href="#封单个IP的命令是：" class="headerlink" title="封单个IP的命令是："></a>封单个IP的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 222.34.135.106 -j DROP</div></pre></td></tr></table></figure>
-<h4 id="封IP段的命令是："><a href="#封IP段的命令是：" class="headerlink" title="封IP段的命令是："></a>封IP段的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 211.1.0.0/16 -j DROP</div><div class="line">iptables -I INPUT -s 211.2.0.0/16 -j DROP</div><div class="line">iptables -I INPUT -s 211.3.0.0/16 -j DROP</div></pre></td></tr></table></figure>
-<h4 id="封整个段的命令是："><a href="#封整个段的命令是：" class="headerlink" title="封整个段的命令是："></a>封整个段的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 211.0.0.0/8 -j DROP</div></pre></td></tr></table></figure>
-<h4 id="封几个段的命令是："><a href="#封几个段的命令是：" class="headerlink" title="封几个段的命令是："></a>封几个段的命令是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">iptables -I INPUT -s 61.37.80.0/24 -j DROP</div><div class="line">iptables -I INPUT -s 61.37.81.0/24 -j DROP</div></pre></td></tr></table></figure>
-<h4 id="过滤所有非以上规则的请求"><a href="#过滤所有非以上规则的请求" class="headerlink" title="过滤所有非以上规则的请求"></a>过滤所有非以上规则的请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -P INPUT DROP</div></pre></td></tr></table></figure>
-<h4 id="保存重启"><a href="#保存重启" class="headerlink" title="保存重启"></a>保存重启</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service iptables save</div><div class="line">service iptables restart</div></pre></td></tr></table></figure>
-<h4 id="删除规则用-D参数"><a href="#删除规则用-D参数" class="headerlink" title="删除规则用-D参数"></a>删除规则用-D参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -D INPUT -p tcp -m tcp --dport 8080 -j ACCEPT</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/linux-iptables/" data-id="cj8mo45ns000e0cunh9bswltu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/22/git-01/" data-id="cj9tqfk7a0007xoun4erjqd7e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -555,7 +545,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/Outher/">Outher</a></li><li class="category-list-item"><a class="category-list-link" href="/php/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/other/">其他</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/Outher/">Outher</a></li><li class="category-list-item"><a class="category-list-link" href="/php/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/other/">其他</a></li></ul>
     </div>
   </div>
 
@@ -570,7 +560,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
     </div>
   </div>
 
@@ -581,6 +571,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/11/10/merlin/">梅林交叉编译环境</a>
+          </li>
         
           <li>
             <a href="/2017/09/28/php-ext/">php-ext</a>
@@ -596,10 +590,6 @@
         
           <li>
             <a href="/2017/07/02/outher-03/">风扇减速方法</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/nginx-01/">nginx 配置</a>
           </li>
         
       </ul>

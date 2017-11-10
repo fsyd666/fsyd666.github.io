@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>梅林交叉编译环境 | 鱼香肉丝不好吃的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#Asuswrt-Merlin(ARM)交叉编译环境的搭建 这里说到的AC-68U就是ARM平台的，Soc是BCM4708;我们的电脑如无意外都是X86平台，直接编译的程序并不能在路由执行。 注:华硕的AC-66U 、 N-66U为MIPS架构的Soc(BCM4706)，此教程不完全适用。 首先是下载Merlin的源码,此处以保存在/home/merlin12cd /home/merlingit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梅林交叉编译环境">
+<meta property="og:url" content="http://yoursite.com/2017/11/10/merlin/index.html">
+<meta property="og:site_name" content="鱼香肉丝不好吃的博客">
+<meta property="og:description" content="#Asuswrt-Merlin(ARM)交叉编译环境的搭建 这里说到的AC-68U就是ARM平台的，Soc是BCM4708;我们的电脑如无意外都是X86平台，直接编译的程序并不能在路由执行。 注:华硕的AC-66U 、 N-66U为MIPS架构的Soc(BCM4706)，此教程不完全适用。 首先是下载Merlin的源码,此处以保存在/home/merlin12cd /home/merlingit">
+<meta property="og:updated_time" content="2017-11-10T10:00:53.899Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="梅林交叉编译环境">
+<meta name="twitter:description" content="#Asuswrt-Merlin(ARM)交叉编译环境的搭建 这里说到的AC-68U就是ARM平台的，Soc是BCM4708;我们的电脑如无意外都是X86平台，直接编译的程序并不能在路由执行。 注:华硕的AC-66U 、 N-66U为MIPS架构的Soc(BCM4706)，此教程不完全适用。 首先是下载Merlin的源码,此处以保存在/home/merlin12cd /home/merlingit">
+  
+    <link rel="alternate" href="/atom.xml" title="鱼香肉丝不好吃的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/linux">Linux</a>
+        
+          <a class="main-nav-link" href="/php">PHP</a>
+        
+          <a class="main-nav-link" href="/python">Python</a>
+        
+          <a class="main-nav-link" href="/go">GO</a>
+        
+          <a class="main-nav-link" href="/flash">Flash</a>
+        
+          <a class="main-nav-link" href="/git">Git</a>
+        
+          <a class="main-nav-link" href="/bug">漏洞</a>
+        
+          <a class="main-nav-link" href="/cache">缓存</a>
+        
+          <a class="main-nav-link" href="/proxy">代理</a>
+        
+          <a class="main-nav-link" href="/other">其他</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-merlin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/10/merlin/" class="article-date">
+  <time datetime="2017-11-10T09:55:30.000Z" itemprop="datePublished">2017-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/Other/">Other</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      梅林交叉编译环境
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Asuswrt-Merlin(ARM)交叉编译环境的搭建</p>
+<p>这里说到的AC-68U就是ARM平台的，Soc是BCM4708;我们的电脑如无意外都是X86平台，直接编译的程序并不能在路由执行。</p>
+<p>注:华硕的AC-66U 、 N-66U为MIPS架构的Soc(BCM4706)，此教程不完全适用。</p>
+<p>首先是下载Merlin的源码,此处以保存在/home/merlin<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /home/merlin</div><div class="line">git clone https://github.com/RMerl/asuswrt-merlin.git</div></pre></td></tr></table></figure></p>
+<p>下载完这个巨大的包之后，进入/home/merlin/asuswrt-merlin/release，你会看到很多文件夹，这里说一下各个文件夹中工具对应的路由型号和架构。<br>(也可以不下载完整包只下载编译包 地址：<a href="https://github.com/RMerl/am-toolchains" target="_blank" rel="external">https://github.com/RMerl/am-toolchains</a>)<br>src-rt/是对应古老的N-16U，此处不讨论<br>src-rt-6.x/对应MIPS架构的AC-66U和N-66U<br>src-rt-6.x.4708/对应采用BCM4708的AC-68U以及AC56U，Soc为ARM架构</p>
+<p>然后是创建软连接，方便管理和调用</p>
+<p>#此处酌情调整路径，如果是AC-66U则把src-rt-6.x.4708换成src-rt-6.x<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln -s /home/merlin/asuswrt-merlin/tools/brcm /opt/brcm</div><div class="line">ln -s /home/merlin/asuswrt-merlin/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3 /opt/brcm-arm</div></pre></td></tr></table></figure></p>
+<p>接下来是安装编译需要的组件，如果电脑装有这些软件的可以跳过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install autoconf automake bash bison bzip2 diffutils file flex g++ gawk gcc-multilib gettext gperf groff-base libncurses-dev libexpat1-dev libslang2 libssl-dev libtool libxml-parser-perl make patch perl pkg-config python sed shtool tar texinfo unzip zlib1g zlib1g-dev</div></pre></td></tr></table></figure></p>
+<p>如果你的电脑是64位操作系统，会缺少一些32位的库，这里需要自行安装。另外这些软件包的名称可能会在版本迭代中有所变动，如果装不上请自行搜索。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install lib32z1-dev lib32stdc++6</div></pre></td></tr></table></figure></p>
+<p>这样子环境的部署就大功告成了。<br>在每次开启一个终端要编译的时候，需要输入变量环境。记得，是每次创建一个新的终端都要输入。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin:/opt/brcm-arm/bin</div><div class="line">export LD_LIBRARY_PATH=$&#123;LD_LIBRARY_PATH&#125;:/opt/brcm-arm/lib:/opt/brcm/hndtools-mipsel-uclibc/lib:/usr/local/lib:/usr/lib</div></pre></td></tr></table></figure></p>
+<p>这样子就可以去编译你需要的软件了，不过在configure之前记得加上这一段，举个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CC=arm-uclibc-linux-2.6.36-gcc CXX=arm-uclibc-linux-2.6.36-g++ AR=arm-uclibc-linux-2.6.36-ar RANLIB=arm-uclibc-linux-2.6.36-ranlib ./configure</div></pre></td></tr></table></figure></p>
+<p>有时候要用到 host= 这个编译参数，这里填</p>
+<p>–host=arm-uclibc-linux</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/10/merlin/" data-id="cj9tqfk7d0008xounbp71md9v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/28/php-ext/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">php-ext</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/Outher/">Outher</a></li><li class="category-list-item"><a class="category-list-link" href="/php/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/other/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/10/merlin/">梅林交叉编译环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/28/php-ext/">php-ext</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/07/huibian/">汇编常用指令</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/30/linux-mysql/">linux-mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/outher-03/">风扇减速方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 fsyd<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/linux" class="mobile-nav-link">Linux</a>
+  
+    <a href="/php" class="mobile-nav-link">PHP</a>
+  
+    <a href="/python" class="mobile-nav-link">Python</a>
+  
+    <a href="/go" class="mobile-nav-link">GO</a>
+  
+    <a href="/flash" class="mobile-nav-link">Flash</a>
+  
+    <a href="/git" class="mobile-nav-link">Git</a>
+  
+    <a href="/bug" class="mobile-nav-link">漏洞</a>
+  
+    <a href="/cache" class="mobile-nav-link">缓存</a>
+  
+    <a href="/proxy" class="mobile-nav-link">代理</a>
+  
+    <a href="/other" class="mobile-nav-link">其他</a>
+  
+</nav>
+    
+
+<script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
