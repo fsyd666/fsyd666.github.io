@@ -29,14 +29,11 @@ CC=arm-linux-gcc STRIP=arm-linux-strip CXX=arm-linux-g++ AR=arm-linux-ar RANLIB=
 make
 ```
 ### 第三方包编译(很多时候需要依赖包都要自己编译):
-ICU库安装
-(unicode包)ICU包下载地址：http://download.icu-project.org/files/icu4c/
+iconv库安装
 ```
-mkdir -p /home/icusc/config
-touch icucross.mk icucross.inc
-CC=arm-linux-gcc STRIP=arm-linux-strip CXX=arm-linux-g++ AR=arm-linux-ar RANLIB=arm-linux-ranlib ./configure \
---host=arm-uclibc-linux --prefix=/home/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/ \
---with-cross-build=/home/icusc --disable-samples --disable-tests
+CC=arm-linux-gcc STRIP=arm-linux-strip CXX=arm-linux-g++ AR=arm-linux-ar RANLIB=arm-linux-ranlib ./configure --host=arm-uclibc-linux --prefix=/home/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/
 make
 ```
+###有些依赖包非常难搞 还是直接去找现成的下载吧
+[台湾的 ARM 镜像包地址](http://tw.mirror.archlinuxarm.org/)
 
