@@ -2,7 +2,7 @@
 title: 汇编常用指令
 date: 2017-09-07 09:51:13
 tags:
-categories: Outher
+categories: 其他
 ---
 
 
