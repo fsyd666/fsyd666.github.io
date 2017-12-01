@@ -73,9 +73,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-jcby" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-cross" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/23/jcby/" class="article-date">
+    <a href="/2017/11/23/cross/" class="article-date">
   <time datetime="2017-11-23T06:15:30.000Z" itemprop="datePublished">2017-11-23</time>
 </a>
     
@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/23/jcby/">arm交叉编译环境</a>
+      <a class="article-title" href="/2017/11/23/cross/">arm交叉编译环境</a>
     </h1>
   
 
@@ -111,56 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/23/jcby/" data-id="cjacbe4dm0000y4un1x8jdeet" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-merlin" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/10/merlin/" class="article-date">
-  <time datetime="2017-11-10T09:55:30.000Z" itemprop="datePublished">2017-11-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/other/">其他</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/10/merlin/">梅林交叉编译环境</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#Asuswrt-Merlin(ARM)交叉编译环境的搭建</p>
-<p>这里说到的AC-68U(ac66u-b1)就是ARM平台的，Soc是BCM4708;我们的电脑如无意外都是X86平台，直接编译的程序并不能在路由执行。</p>
-<p>注:华硕的AC-66U 、 N-66U为MIPS架构的Soc(BCM4706)，此教程不完全适用。</p>
-<p>下载编译包 地址：<a href="https://github.com/RMerl/am-toolchains" target="_blank" rel="external">https://github.com/RMerl/am-toolchains</a> （猜测:使用中只用到：am-toolchains/brcm-arm-sdk/hndtools-arm-linux-2.6.36-uclibc-4.5.3/bin/*）</p>
-<p>#创建软连接，方便管理和调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /home/soft/buildroot-2017.08.1/output/host/ /opt/armhost</div></pre></td></tr></table></figure></p>
-<p>#接下来是安装编译需要的组件，如果电脑装有这些软件的可以跳过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install autoconf automake bash bison bzip2 diffutils file flex g++ gawk gcc-multilib gettext gperf groff-base libncurses-dev libexpat1-dev libslang2 libssl-dev libtool libxml-parser-perl make patch perl pkg-config python sed shtool tar texinfo unzip zlib1g zlib1g-dev</div></pre></td></tr></table></figure></p>
-<p>#64位操作系统，需装32位的库 docker中注意 libelf 32位包安装不上问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dpkg --add-architecture i386  #添加32位支持</div><div class="line">apt-get update  #再更新一下</div><div class="line">apt-get install lib32z1-dev lib32stdc++6 libelf1:i386</div></pre></td></tr></table></figure></p>
-<p>这样子环境的部署就大功告成了。<br>在每次开启一个终端要编译的时候，需要输入变量环境。（这是临时的）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=$PATH:/opt/armhost</div></pre></td></tr></table></figure></p>
-<p>这样子就可以去编译你需要的软件了，不过在configure之前记得加上这一段，举个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CC=arm-linux-gcc CXX=arm-linux-g++ AR=arm-linux-ar RANLIB=arm-linux-ranlib ./configure --host=arm-uclibc-linux</div><div class="line">make</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/10/merlin/" data-id="cj9tqfk7d0008xounbp71md9v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/23/cross/" data-id="cjand5ao90000osun0i4m8zxz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,6 +427,51 @@
 
 
   
+    <article id="post-linux-other" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/22/linux-other/" class="article-date">
+  <time datetime="2017-06-22T03:13:15.000Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/linux-other/">Linux其他</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#多网卡配置方法<br>在VirtualBox生成一个nat(外网网卡) Host-Only(内网网卡)<br>eth0 外网 配置默认 dhcp模式<br>eth1 内网 静态ip配置  HWADDR(mac地址)要配置正确<br>查看 MAC配置 cat /etc/udev/rules.d/70-persistent-net.rules</p>
+<p>#eth0配置(外网)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">DEVICE=eth0</div><div class="line">TYPE=Ethernet</div><div class="line">HWADDR=08:00:27:68:8e:cd</div><div class="line">UUID=112836d5-3ea3-4c7b-9b81-373b4e0b1127</div><div class="line">ONBOOT=yes</div><div class="line">NM_CONTROLLED=yes</div><div class="line">BOOTPROTO=dhcp</div></pre></td></tr></table></figure></p>
+<p>#eth1配置(内网)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DEVICE=eth1</div><div class="line">TYPE=Ethernet</div><div class="line">HWADDR=08:00:27:ad:a0:80</div><div class="line">ONBOOT=yes</div><div class="line">NM_CONTROLLED=yes</div><div class="line">BOOTPROTO=static</div><div class="line">IPADDR=192.168.56.88</div><div class="line">NETMASK=255.255.255.0</div><div class="line">#GATWAY 这一定不能填，否则不能上网</div></pre></td></tr></table></figure></p>
+<p>#route配置(临时配置，重启网络失效)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface</div><div class="line">10.0.2.0        *               255.255.255.0   U     0      0        0 eth0</div><div class="line">192.168.56.0    *               255.255.255.0   U     0      0        0 eth1</div><div class="line">link-local      *               255.255.0.0     U     1002   0        0 eth0</div><div class="line">link-local      *               255.255.0.0     U     1003   0        0 eth1</div><div class="line">default         10.0.2.2        0.0.0.0         UG    0      0        0 eth0</div><div class="line">主要查看 default 的 gateway 值，如果是内网值，就 </div><div class="line">route del default </div><div class="line">route add default gw 10.0.2.2</div></pre></td></tr></table></figure></p>
+<p>#/etc/sysconfig/network配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">添加外网网关</div><div class="line">GATEWAY=10.0.2.2</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/22/linux-other/" data-id="cjacbe4eq0005y4un8ryuqlq6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux-file" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/22/linux-file/" class="article-date">
@@ -565,11 +561,7 @@
       <ul>
         
           <li>
-            <a href="/2017/11/23/jcby/">arm交叉编译环境</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/10/merlin/">梅林交叉编译环境</a>
+            <a href="/2017/11/23/cross/">arm交叉编译环境</a>
           </li>
         
           <li>
@@ -582,6 +574,10 @@
         
           <li>
             <a href="/2017/08/30/linux-mysql/">linux-mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/other-03/">风扇减速方法</a>
           </li>
         
       </ul>
