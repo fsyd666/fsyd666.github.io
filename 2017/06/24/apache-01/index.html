@@ -5,16 +5,16 @@
   
   <title>apache2.4以上版本vhost 403问题 | 鱼香肉丝不好吃的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在Vhost 项目中添加1234&amp;lt;Directory /&amp;gt;    AllowOverride All    Require all granted&amp;lt;/Directory&amp;gt; 主要是这句 Require all granted 2.2版本是不需要的">
+  <meta name="description" content="在Vhost 项目中添加1234&amp;lt;Directory /&amp;gt;    AllowOverride All    Require all granted&amp;lt;/Directory&amp;gt; 主要是这句 Require all granted 2.2版本是不需要的 检测配置文件错误 导致不能启动1234windows : httpd -tlinux   : ./apachectl config">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apache2.4以上版本vhost 403问题">
 <meta property="og:url" content="http://yoursite.com/2017/06/24/apache-01/index.html">
 <meta property="og:site_name" content="鱼香肉丝不好吃的博客">
-<meta property="og:description" content="在Vhost 项目中添加1234&amp;lt;Directory /&amp;gt;    AllowOverride All    Require all granted&amp;lt;/Directory&amp;gt; 主要是这句 Require all granted 2.2版本是不需要的">
-<meta property="og:updated_time" content="2017-06-29T06:43:10.488Z">
+<meta property="og:description" content="在Vhost 项目中添加1234&amp;lt;Directory /&amp;gt;    AllowOverride All    Require all granted&amp;lt;/Directory&amp;gt; 主要是这句 Require all granted 2.2版本是不需要的 检测配置文件错误 导致不能启动1234windows : httpd -tlinux   : ./apachectl config">
+<meta property="og:updated_time" content="2018-03-30T06:02:35.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apache2.4以上版本vhost 403问题">
-<meta name="twitter:description" content="在Vhost 项目中添加1234&amp;lt;Directory /&amp;gt;    AllowOverride All    Require all granted&amp;lt;/Directory&amp;gt; 主要是这句 Require all granted 2.2版本是不需要的">
+<meta name="twitter:description" content="在Vhost 项目中添加1234&amp;lt;Directory /&amp;gt;    AllowOverride All    Require all granted&amp;lt;/Directory&amp;gt; 主要是这句 Require all granted 2.2版本是不需要的 检测配置文件错误 导致不能启动1234windows : httpd -tlinux   : ./apachectl config">
   
     <link rel="alternate" href="/atom.xml" title="鱼香肉丝不好吃的博客" type="application/atom+xml">
   
@@ -103,7 +103,7 @@
       
         <h4 id="在Vhost-项目中添加"><a href="#在Vhost-项目中添加" class="headerlink" title="在Vhost 项目中添加"></a>在Vhost 项目中添加</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">    AllowOverride All</div><div class="line">    Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
 <p>主要是这句 Require all granted 2.2版本是不需要的</p>
-
+<h4 id="检测配置文件错误-导致不能启动"><a href="#检测配置文件错误-导致不能启动" class="headerlink" title="检测配置文件错误 导致不能启动"></a>检测配置文件错误 导致不能启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">windows : httpd -t</div><div class="line">linux   : ./apachectl configtest</div><div class="line">正确显示 : Syntax OK</div><div class="line">错误显示 : 类似AH00526: Syntax error on line 339 of conf/httpd.conf:</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -203,7 +203,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 fsyd<br>
+      &copy; 2018 fsyd<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
