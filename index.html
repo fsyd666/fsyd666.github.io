@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/23/cross/" data-id="cjand5ao90000osun0i4m8zxz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/23/cross/" data-id="cjfdkhwhc000170unwm2zpcxb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/28/php-ext/" data-id="cj9tqfk7u000oxounmq11hik9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/28/php-ext/" data-id="cjfdkhwje001370uncfk5ldlr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/07/huibian/" data-id="cj9tqfk8h0011xounu0337jo0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/07/huibian/" data-id="cjfdkhwic000770unxn4u8zcw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/30/linux-mysql/" data-id="cj9tqfk7f000bxoun1u91otn6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/30/linux-mysql/" data-id="cjfdkhwim000g70unj35aln99" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/02/other-03/" data-id="cjacbe4ek0004y4uny0omrmu5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/02/other-03/" data-id="cjfdkhwir000n70unr9aowq3g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/nginx-01/" data-id="cj9tqfk8p0015xoun2knx3to3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/nginx-01/" data-id="cjfdkhwix000r70unvjdfi1py" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/24/apache-01/" data-id="cj9tqfk6j0001xounk5p917r8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/24/apache-01/" data-id="cjfdkhwh6000070un1jiu939q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -417,52 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/23/other-02/" data-id="cjacbe4dy0001y4un6ywihyah" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux-other" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/22/linux-other/" class="article-date">
-  <time datetime="2017-06-22T03:13:15.000Z" itemprop="datePublished">2017-06-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/linux-other/">Linux其他</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#多网卡配置方法<br>在VirtualBox生成一个nat(外网网卡) Host-Only(内网网卡)<br>eth0 外网 配置默认 dhcp模式<br>eth1 内网 静态ip配置  HWADDR(mac地址)要配置正确<br>查看 MAC配置 cat /etc/udev/rules.d/70-persistent-net.rules</p>
-<p>#eth0配置(外网)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">DEVICE=eth0</div><div class="line">TYPE=Ethernet</div><div class="line">HWADDR=08:00:27:68:8e:cd</div><div class="line">UUID=112836d5-3ea3-4c7b-9b81-373b4e0b1127</div><div class="line">ONBOOT=yes</div><div class="line">NM_CONTROLLED=yes</div><div class="line">BOOTPROTO=dhcp</div></pre></td></tr></table></figure></p>
-<p>#eth1配置(内网)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DEVICE=eth1</div><div class="line">TYPE=Ethernet</div><div class="line">HWADDR=08:00:27:ad:a0:80</div><div class="line">ONBOOT=yes</div><div class="line">NM_CONTROLLED=yes</div><div class="line">BOOTPROTO=static</div><div class="line">IPADDR=192.168.56.88</div><div class="line">NETMASK=255.255.255.0</div><div class="line">#GATWAY 这一定不能填，否则不能上网</div></pre></td></tr></table></figure></p>
-<p>#route配置(临时配置，重启网络失效)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface</div><div class="line">10.0.2.0        *               255.255.255.0   U     0      0        0 eth0</div><div class="line">192.168.56.0    *               255.255.255.0   U     0      0        0 eth1</div><div class="line">link-local      *               255.255.0.0     U     1002   0        0 eth0</div><div class="line">link-local      *               255.255.0.0     U     1003   0        0 eth1</div><div class="line">default         10.0.2.2        0.0.0.0         UG    0      0        0 eth0</div><div class="line">主要查看 default 的 gateway 值，如果是内网值，就 </div><div class="line">route del default </div><div class="line">route add default gw 10.0.2.2</div></pre></td></tr></table></figure></p>
-<p>#/etc/sysconfig/network配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">添加外网网关</div><div class="line">GATEWAY=10.0.2.2</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/22/linux-other/" data-id="cjacbe4eq0005y4un8ryuqlq6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/23/other-02/" data-id="cjfdkhwit000p70unlq859fz2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -510,7 +465,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/22/linux-file/" data-id="cj9tqfk7h000cxoun89esnppe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/22/linux-file/" data-id="cjfdkhwik000d70uncpzkj5j3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux-other" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/22/linux-other/" class="article-date">
+  <time datetime="2017-06-22T03:13:15.000Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/linux-other/">Linux其他</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#多网卡配置方法<br>在VirtualBox生成一个nat(外网网卡) Host-Only(内网网卡)<br>eth0 外网 配置默认 dhcp模式<br>eth1 内网 静态ip配置  HWADDR(mac地址)要配置正确<br>查看 MAC配置 cat /etc/udev/rules.d/70-persistent-net.rules</p>
+<p>#eth0配置(外网)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">DEVICE=eth0</div><div class="line">TYPE=Ethernet</div><div class="line">HWADDR=08:00:27:68:8e:cd</div><div class="line">UUID=112836d5-3ea3-4c7b-9b81-373b4e0b1127</div><div class="line">ONBOOT=yes</div><div class="line">NM_CONTROLLED=yes</div><div class="line">BOOTPROTO=dhcp</div></pre></td></tr></table></figure></p>
+<p>#eth1配置(内网)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DEVICE=eth1</div><div class="line">TYPE=Ethernet</div><div class="line">HWADDR=08:00:27:ad:a0:80</div><div class="line">ONBOOT=yes</div><div class="line">NM_CONTROLLED=yes</div><div class="line">BOOTPROTO=static</div><div class="line">IPADDR=192.168.56.88</div><div class="line">NETMASK=255.255.255.0</div><div class="line">#GATWAY 这一定不能填，否则不能上网</div></pre></td></tr></table></figure></p>
+<p>#route配置(临时配置，重启网络失效)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface</div><div class="line">10.0.2.0        *               255.255.255.0   U     0      0        0 eth0</div><div class="line">192.168.56.0    *               255.255.255.0   U     0      0        0 eth1</div><div class="line">link-local      *               255.255.0.0     U     1002   0        0 eth0</div><div class="line">link-local      *               255.255.0.0     U     1003   0        0 eth1</div><div class="line">default         10.0.2.2        0.0.0.0         UG    0      0        0 eth0</div><div class="line">主要查看 default 的 gateway 值，如果是内网值，就 </div><div class="line">route del default </div><div class="line">route add default gw 10.0.2.2</div></pre></td></tr></table></figure></p>
+<p>#/etc/sysconfig/network配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">添加外网网关</div><div class="line">GATEWAY=10.0.2.2</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/22/linux-other/" data-id="cjfdkhwiq000l70unlc92z9nw" class="article-share-link">Share</a>
       
       
     </footer>
