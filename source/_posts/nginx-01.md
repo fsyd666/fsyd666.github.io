@@ -44,6 +44,10 @@ location / {
     try_files $uri $uri/ /index.php$is_args$args;
 }
 ```
+#### 检测配置文件正确性
+```
+命令：nginx -t
+```
 
 #### 一个虚拟主机的配置
 ```

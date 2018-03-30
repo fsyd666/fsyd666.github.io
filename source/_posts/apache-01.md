@@ -1,12 +1,13 @@
 ---
-title: apache2.4以上版本vhost 403问题
+title: apache
 date: 2017-06-24 11:41:07
 tags:
 categories: 其他
 ---
 
-#### 在Vhost 项目中添加
+#### apache2.4以上版本vhost 403问题
 ```
+在Vhost 项目中添加
 <Directory />
     AllowOverride All
     Require all granted
